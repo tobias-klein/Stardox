@@ -278,6 +278,11 @@ def stardox(repo_link, ver, save):
         print(colors.red + "{0}".format("-") * 75, colors.green, end="\n\n")
         # Fetching details of stargazers one by one.
         while(count <= len(data.username_list)):
+            print("@" + data.username_list[pos], end=' ')
+            count += 1
+            pos += 1
+            continue
+
             starer_url = "https://github.com/" + data.username_list[pos]
             user_html = requests.get(starer_url).text
             soup3 = BeautifulSoup(user_html, "lxml")
